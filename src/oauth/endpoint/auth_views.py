@@ -4,7 +4,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.response import Response
 
 from .. import serializer
-from ..services import google
+from ..services import google, spotify
 
 
 def google_login(request):
@@ -20,3 +20,15 @@ def google_auth(request):
         return Response(token)
     else:
         return AuthenticationFailed(code=403, detail='Bad data Google')
+
+
+def spotify_login(request):
+    """ входа через Spotify """
+    return render(request, 'oauth/spotify_login.html')
+
+
+@api_view(['GET'])
+def spotify_auth(request):
+    """ Подтверждение авторизации через Spotify  """
+    token = spotify.spotify_auth(request.query_params.get('code'))
+    return Response(token)

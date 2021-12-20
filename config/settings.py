@@ -124,6 +124,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24
 GOOGLE_CLIENT_ID = 'my secret key'
 GOOGLE_SECRET_KEY = 'my secret key'
 
+SPOTIFY_CLIENT_ID = 'my secret key'
+SPOTIFY_SECRET = 'my secret key'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('src.oauth.services.auth_backend.AuthBackend',),
