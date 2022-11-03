@@ -134,6 +134,14 @@ REST_FRAMEWORK = {
     ]
 }
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+    
+)
+
+
+
 
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
@@ -145,3 +153,7 @@ SWAGGER_SETTINGS = {
     }
 }
 
+SOCIAL_AUTH_GITHUB_KEY = 'my secret key'
+SOCIAL_AUTH_GITHUB_SECRET = 'my secret id'
+
+SOCIAL_AUTH_POSTGRES_JSONFIELD = True
